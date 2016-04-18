@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PersistanceDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="114" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dIr-sa-WHi">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="114" id="Rvr-i7-aGT" customClass="MovieCell" customModule="PersistanceDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="114"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rvr-i7-aGT" id="3OO-g0-tV5">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="113.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jungle Book" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KqD-3O-4Ok">
+                                                    <rect key="frame" x="8" y="8" width="95" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wnc-9y-Pjx">
+                                                    <rect key="frame" x="8" y="37" width="64" height="64"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="64" id="kLk-zs-eDg"/>
+                                                        <constraint firstAttribute="height" constant="64" id="kTW-Ex-eBw"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An orphan boy is raised in the Jungle with the help of a pack of wolves, a bear and a black panther." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4cr-vt-WRT">
+                                                    <rect key="frame" x="80" y="37" width="232" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="KqD-3O-4Ok" firstAttribute="leading" secondItem="3OO-g0-tV5" secondAttribute="leading" constant="8" id="79C-K1-IGy"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Wnc-9y-Pjx" secondAttribute="bottom" constant="8" id="B9R-NA-btA"/>
+                                                <constraint firstItem="4cr-vt-WRT" firstAttribute="top" secondItem="Wnc-9y-Pjx" secondAttribute="top" id="BLB-DT-Xbc"/>
+                                                <constraint firstItem="4cr-vt-WRT" firstAttribute="leading" secondItem="Wnc-9y-Pjx" secondAttribute="trailing" constant="8" id="KMm-Bd-lwe"/>
+                                                <constraint firstItem="Wnc-9y-Pjx" firstAttribute="leading" secondItem="3OO-g0-tV5" secondAttribute="leading" constant="8" id="LWX-cR-8tJ"/>
+                                                <constraint firstItem="Wnc-9y-Pjx" firstAttribute="top" secondItem="KqD-3O-4Ok" secondAttribute="bottom" constant="8" id="a8M-gF-GDt"/>
+                                                <constraint firstItem="KqD-3O-4Ok" firstAttribute="top" secondItem="3OO-g0-tV5" secondAttribute="top" constant="8" id="bDC-lv-i4y"/>
+                                                <constraint firstAttribute="trailing" secondItem="4cr-vt-WRT" secondAttribute="trailing" constant="8" id="hdo-us-Fzn"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="4cr-vt-WRT" secondAttribute="bottom" constant="8" id="p6L-Cg-DCs"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="overviewLabel" destination="4cr-vt-WRT" id="mJt-8Z-iUg"/>
+                                            <outlet property="posterView" destination="Wnc-9y-Pjx" id="Ie6-3A-YnR"/>
+                                            <outlet property="titleLabel" destination="KqD-3O-4Ok" id="0hd-IE-Clb"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="04j-uv-lxq"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="h6Y-lL-l5y"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dIr-sa-WHi" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="98f-bi-uAe"/>
+                            <constraint firstItem="dIr-sa-WHi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BTl-un-DqO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dIr-sa-WHi" secondAttribute="bottom" id="Vst-ia-0iE"/>
+                            <constraint firstAttribute="trailing" secondItem="dIr-sa-WHi" secondAttribute="trailing" id="YrM-M2-WVz"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="tableView" destination="dIr-sa-WHi" id="ilT-Mo-S7a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="417"/>
+        </scene>
+    </scenes>
+</document>
