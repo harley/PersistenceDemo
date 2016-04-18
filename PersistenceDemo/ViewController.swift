@@ -35,9 +35,14 @@ class ViewController: UIViewController {
                 return
             }
 
-
-            print("data and response", data, response)
+            let json = try! NSJSONSerialization.JSONObjectWithData(data!, options: []) as! NSDictionary
+            self.movies = json["results"] as? [NSDictionary]
+            print("data and response", self.movies)
+            dispatch_async(dispatch_get_main_queue()) {
+                self.tableView.reloadData()
+            }
         }
+
         task.resume()
     }
 }
