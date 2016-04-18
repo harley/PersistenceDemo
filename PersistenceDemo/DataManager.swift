@@ -22,13 +22,13 @@ class DataManager {
         }
         let defaults = NSUserDefaults.standardUserDefaults()
         let data = NSKeyedArchiver.archivedDataWithRootObject(movies)
-        defaults.setObject(data, forKey: "movies")
+        defaults.setObject(data, forKey: "now_playing_archived")
         defaults.synchronize()
     }
 
     static func loadFromNSUserDefaults() -> [Movie]? {
         let defaults = NSUserDefaults.standardUserDefaults()
-        let data = defaults.objectForKey("movies") as? NSData
+        let data = defaults.objectForKey("now_playing_archived") as? NSData
         return NSKeyedUnarchiver.unarchiveObjectWithData(data!) as? [Movie]
     }
 

@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     var movies: [Movie]?
+
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
