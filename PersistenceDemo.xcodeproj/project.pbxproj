@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E2402BD91CC4EB800087C2EC /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2402BD81CC4EB800087C2EC /* Movie.swift */; };
+		E2402BFC1CC4FF700087C2EC /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2402BFB1CC4FF700087C2EC /* DataManager.swift */; };
 		E24783E11CC4CE6900716923 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24783E01CC4CE6900716923 /* AppDelegate.swift */; };
 		E24783E31CC4CE6900716923 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24783E21CC4CE6900716923 /* ViewController.swift */; };
 		E24783E61CC4CE6900716923 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E24783E41CC4CE6900716923 /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E2402BD81CC4EB800087C2EC /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		E2402BFB1CC4FF700087C2EC /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		E24783DD1CC4CE6900716923 /* PersistenceDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersistenceDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E24783E01CC4CE6900716923 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E24783E21CC4CE6900716923 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				E24783E91CC4CE6900716923 /* LaunchScreen.storyboard */,
 				E24783EC1CC4CE6900716923 /* Info.plist */,
 				E24783F21CC4CEE300716923 /* MovieCell.swift */,
+				E2402BD81CC4EB800087C2EC /* Movie.swift */,
+				E2402BFB1CC4FF700087C2EC /* DataManager.swift */,
 			);
 			path = PersistenceDemo;
 			sourceTree = "<group>";
@@ -139,7 +145,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E24783E31CC4CE6900716923 /* ViewController.swift in Sources */,
+				E2402BFC1CC4FF700087C2EC /* DataManager.swift in Sources */,
 				E24783E11CC4CE6900716923 /* AppDelegate.swift in Sources */,
+				E2402BD91CC4EB800087C2EC /* Movie.swift in Sources */,
 				E24783F31CC4CEE300716923 /* MovieCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

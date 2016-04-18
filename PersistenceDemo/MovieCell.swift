@@ -13,14 +13,12 @@ class MovieCell: UITableViewCell {
     @IBOutlet weak var posterView: UIImageView!
     @IBOutlet weak var overviewLabel: UILabel!
 
-    var movie: NSDictionary! {
+    var movie: Movie! {
         didSet {
-            titleLabel.text = movie.valueForKey("original_title") as? String
-            overviewLabel.text = movie.valueForKey("overview") as? String
-            // implement posterView here
-
-            let path = movie.valueForKey("poster_path") as? String
-            let url = "https://image.tmdb.org/t/p/w342" + path!
+            titleLabel.text = movie.title
+            overviewLabel.text = movie.overview
+            let path = movie.posterPath
+            let url = "https://image.tmdb.org/t/p/w342" + path
             let task = NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: url)!) { (data: NSData?, response: NSURLResponse?, error: NSError?) in
                 guard let data = data where error == nil else { return }
                 dispatch_async(dispatch_get_main_queue(), {

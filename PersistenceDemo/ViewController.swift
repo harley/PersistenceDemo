@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var movies: [NSDictionary]?
+    var movies: [Movie]?
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
@@ -23,42 +23,58 @@ class ViewController: UIViewController {
         // Option 2:
 //        let documentDirectoryURL = try! NSFileManager().URLForDirectory(.DocumentDirectory, inDomain: .AllDomainsMask, appropriateForURL: nil, create: true)
 //        print("documentDirectoryURL", documentDirectoryURL)
-        fetchMovies()
+        fetchMovies("NSUserDefaults")
     }
 
-    func saveDataWithNSUserDefaults() {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        // http://stackoverflow.com/questions/1249634/wheres-the-difference-between-setobjectforkey-and-setvalueforkey-in-nsmutab
-        defaults.setObject(movies, forKey: "movies")
-        defaults.synchronize()
+    func saveData(method: String) {
+        switch method {
+        case "NSUserDefaults":
+            DataManager.saveToNSUserDefaults(movies)
+        case "File":
+            DataManager.saveToFile(movies)
+        default:
+            print("ERROR: unknown saveData \(method)")
+        }
     }
 
-    func loadDataWithNSUserDefaults() {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        movies = defaults.objectForKey("movies") as? [NSDictionary]
+    func loadData(method: String) {
+        switch method {
+        case "NSUserDefaults":
+            movies = DataManager.loadFromNSUserDefaults()
+        case "File":
+            movies = DataManager.loadFromFile()
+        default:
+            print("ERROR: unknown loadData \(method)")
+        }
     }
 
-    func fetchMovies() {
+    func fetchMovies(method: String) {
         let clientId = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
         let url = NSURL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=\(clientId)")!
         let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
         let request = NSURLRequest(URL: url, cachePolicy: .ReloadIgnoringLocalCacheData, timeoutInterval: 2)
-//        let task = session.dataTaskWithURL(url) { (data: NSData?, response: NSURLResponse?, error: NSError?) in
         let task = session.dataTaskWithRequest(request) { (data: NSData?, response: NSURLResponse?, error: NSError?) in
             guard error == nil else {
-                print("Error: ", error?.description)
+//                print("Error: ", error?.description)
                 dispatch_async(dispatch_get_main_queue()) {
-                    self.loadDataWithNSUserDefaults()
+                    self.loadData(method)
                     self.tableView.reloadData()
                 }
                 return
             }
 
             let json = try! NSJSONSerialization.JSONObjectWithData(data!, options: []) as! NSDictionary
-            self.movies = json["results"] as? [NSDictionary]
-//            print("data and response", self.movies)
+            let moviesArray = json["results"] as? [NSDictionary]
+            self.movies = []
+            for m in moviesArray! {
+                let movie = Movie()
+                movie.title = m.valueForKey("original_title") as! String
+                movie.overview = m.valueForKey("overview") as! String
+                movie.posterPath = m.valueForKey("poster_path") as! String
+                self.movies?.append(movie)
+            }
             dispatch_async(dispatch_get_main_queue()) {
-                self.saveDataWithNSUserDefaults()
+                self.saveData(method)
                 self.tableView.reloadData()
             }
         }
