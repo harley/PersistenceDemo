@@ -44,4 +44,13 @@ class DataManager {
     static func loadFromFile() -> [Movie]? {
         return NSKeyedUnarchiver.unarchiveObjectWithFile(dataFile()) as? [Movie]
     }
+
+    static func loadFromRealm() -> [Movie]? {
+        // IMPLEMENT THIS
+        return []
+    }
+
+    static func saveToRealm(movies: [Movie]?) {
+        // IMPLEMENT THIS
+    }
 }
