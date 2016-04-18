@@ -16,14 +16,27 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
+        // Option 1
+        let documentsPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        print("documentsPaths: ", documentsPaths)
+
+        // Option 2:
+//        let documentDirectoryURL = try! NSFileManager().URLForDirectory(.DocumentDirectory, inDomain: .AllDomainsMask, appropriateForURL: nil, create: true)
+//        print("documentDirectoryURL", documentDirectoryURL)
         fetchMovies()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func saveDataWithNSUserDefaults() {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        // http://stackoverflow.com/questions/1249634/wheres-the-difference-between-setobjectforkey-and-setvalueforkey-in-nsmutab
+        defaults.setObject(movies, forKey: "movies")
+        defaults.synchronize()
     }
 
+    func loadDataWithNSUserDefaults() {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        movies = defaults.objectForKey("movies") as? [NSDictionary]
+    }
 
     func fetchMovies() {
         let clientId = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
@@ -34,13 +47,18 @@ class ViewController: UIViewController {
         let task = session.dataTaskWithRequest(request) { (data: NSData?, response: NSURLResponse?, error: NSError?) in
             guard error == nil else {
                 print("Error: ", error?.description)
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.loadDataWithNSUserDefaults()
+                    self.tableView.reloadData()
+                }
                 return
             }
 
             let json = try! NSJSONSerialization.JSONObjectWithData(data!, options: []) as! NSDictionary
             self.movies = json["results"] as? [NSDictionary]
-            print("data and response", self.movies)
+//            print("data and response", self.movies)
             dispatch_async(dispatch_get_main_queue()) {
+                self.saveDataWithNSUserDefaults()
                 self.tableView.reloadData()
             }
         }
