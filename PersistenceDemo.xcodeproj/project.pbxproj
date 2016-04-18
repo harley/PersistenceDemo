@@ -64,8 +64,7 @@
 				E24783EC1CC4CE6900716923 /* Info.plist */,
 				E24783F21CC4CEE300716923 /* MovieCell.swift */,
 			);
-			name = PersistenceDemo;
-			path = PersistanceDemo;
+			path = PersistenceDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,7 +253,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = PersistanceDemo/Info.plist;
+				INFOPLIST_FILE = PersistenceDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vn.coderschool.PersistenceDemo;
 				PRODUCT_NAME = PersistenceDemo;
@@ -265,7 +264,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = PersistanceDemo/Info.plist;
+				INFOPLIST_FILE = PersistenceDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vn.coderschool.PersistenceDemo;
 				PRODUCT_NAME = PersistenceDemo;

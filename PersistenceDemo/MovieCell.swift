@@ -1,6 +1,6 @@
 //
 //  MovieCell.swift
-//  PersistanceDemo
+//  PersistenceDemo
 //
 //  Created by Harley Trung on 4/18/16.
 //  Copyright © 2016 coderschool.vn. All rights reserved.
