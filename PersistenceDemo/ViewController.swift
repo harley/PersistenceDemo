@@ -23,32 +23,32 @@ class ViewController: UIViewController {
         // Option 2:
 //        let documentDirectoryURL = try! NSFileManager().URLForDirectory(.DocumentDirectory, inDomain: .AllDomainsMask, appropriateForURL: nil, create: true)
 //        print("documentDirectoryURL", documentDirectoryURL)
-        fetchMovies("NSUserDefaults")
+        fetchMovies(.File)
     }
 
-    func saveData(method: String) {
-        switch method {
-        case "NSUserDefaults":
+    func saveData(type: DataStorageType) {
+        switch type {
+        case .NSUserDefaults:
             DataManager.saveToNSUserDefaults(movies)
-        case "File":
+        case .File:
             DataManager.saveToFile(movies)
         default:
-            print("ERROR: unknown saveData \(method)")
+            print("ERROR: unknown saveData \(type)")
         }
     }
 
-    func loadData(method: String) {
-        switch method {
-        case "NSUserDefaults":
+    func loadData(type: DataStorageType) {
+        switch type {
+        case .NSUserDefaults:
             movies = DataManager.loadFromNSUserDefaults()
-        case "File":
+        case .File:
             movies = DataManager.loadFromFile()
         default:
-            print("ERROR: unknown loadData \(method)")
+            print("ERROR: unknown loadData \(type)")
         }
     }
 
-    func fetchMovies(method: String) {
+    func fetchMovies(type: DataStorageType) {
         let clientId = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
         let url = NSURL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=\(clientId)")!
         let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
@@ -57,7 +57,7 @@ class ViewController: UIViewController {
             guard error == nil else {
 //                print("Error: ", error?.description)
                 dispatch_async(dispatch_get_main_queue()) {
-                    self.loadData(method)
+                    self.loadData(type)
                     self.tableView.reloadData()
                 }
                 return
@@ -74,7 +74,7 @@ class ViewController: UIViewController {
                 self.movies?.append(movie)
             }
             dispatch_async(dispatch_get_main_queue()) {
-                self.saveData(method)
+                self.saveData(type)
                 self.tableView.reloadData()
             }
         }

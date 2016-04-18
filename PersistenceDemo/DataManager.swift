@@ -8,6 +8,10 @@
 
 import Foundation
 
+enum DataStorageType {
+    case NSUserDefaults, File, CoreData
+}
+
 class DataManager {
     // class vs static methods:
     // http://stackoverflow.com/questions/29636633/static-vs-class-functions-variables-in-swift-classes
@@ -30,7 +34,7 @@ class DataManager {
 
     static func dataFile() -> String {
         let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
-        return documentsPath.stringByAppendingString("data.archive")
+        return documentsPath.stringByAppendingString("/data.archive")
     }
 
     static func saveToFile(movies: [Movie]?) {
