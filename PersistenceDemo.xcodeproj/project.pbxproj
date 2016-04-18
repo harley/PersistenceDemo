@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E24783DD1CC4CE6900716923 /* PersistanceDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersistanceDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E24783DD1CC4CE6900716923 /* PersistenceDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersistenceDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E24783E01CC4CE6900716923 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E24783E21CC4CE6900716923 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E24783E51CC4CE6900716923 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,7 +40,7 @@
 		E24783D41CC4CE6900716923 = {
 			isa = PBXGroup;
 			children = (
-				E24783DF1CC4CE6900716923 /* PersistanceDemo */,
+				E24783DF1CC4CE6900716923 /* PersistenceDemo */,
 				E24783DE1CC4CE6900716923 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,12 +48,12 @@
 		E24783DE1CC4CE6900716923 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E24783DD1CC4CE6900716923 /* PersistanceDemo.app */,
+				E24783DD1CC4CE6900716923 /* PersistenceDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E24783DF1CC4CE6900716923 /* PersistanceDemo */ = {
+		E24783DF1CC4CE6900716923 /* PersistenceDemo */ = {
 			isa = PBXGroup;
 			children = (
 				E24783E01CC4CE6900716923 /* AppDelegate.swift */,
@@ -64,15 +64,16 @@
 				E24783EC1CC4CE6900716923 /* Info.plist */,
 				E24783F21CC4CEE300716923 /* MovieCell.swift */,
 			);
+			name = PersistenceDemo;
 			path = PersistanceDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E24783DC1CC4CE6900716923 /* PersistanceDemo */ = {
+		E24783DC1CC4CE6900716923 /* PersistenceDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E24783EF1CC4CE6900716923 /* Build configuration list for PBXNativeTarget "PersistanceDemo" */;
+			buildConfigurationList = E24783EF1CC4CE6900716923 /* Build configuration list for PBXNativeTarget "PersistenceDemo" */;
 			buildPhases = (
 				E24783D91CC4CE6900716923 /* Sources */,
 				E24783DA1CC4CE6900716923 /* Frameworks */,
@@ -82,9 +83,9 @@
 			);
 			dependencies = (
 			);
-			name = PersistanceDemo;
+			name = PersistenceDemo;
 			productName = PersistanceDemo;
-			productReference = E24783DD1CC4CE6900716923 /* PersistanceDemo.app */;
+			productReference = E24783DD1CC4CE6900716923 /* PersistenceDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -102,7 +103,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E24783D81CC4CE6900716923 /* Build configuration list for PBXProject "PersistanceDemo" */;
+			buildConfigurationList = E24783D81CC4CE6900716923 /* Build configuration list for PBXProject "PersistenceDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -115,7 +116,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E24783DC1CC4CE6900716923 /* PersistanceDemo */,
+				E24783DC1CC4CE6900716923 /* PersistenceDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -255,8 +256,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PersistanceDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = vn.coderschool.PersistanceDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = vn.coderschool.PersistenceDemo;
+				PRODUCT_NAME = PersistenceDemo;
 			};
 			name = Debug;
 		};
@@ -266,15 +267,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PersistanceDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = vn.coderschool.PersistanceDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = vn.coderschool.PersistenceDemo;
+				PRODUCT_NAME = PersistenceDemo;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E24783D81CC4CE6900716923 /* Build configuration list for PBXProject "PersistanceDemo" */ = {
+		E24783D81CC4CE6900716923 /* Build configuration list for PBXProject "PersistenceDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E24783ED1CC4CE6900716923 /* Debug */,
@@ -283,13 +284,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E24783EF1CC4CE6900716923 /* Build configuration list for PBXNativeTarget "PersistanceDemo" */ = {
+		E24783EF1CC4CE6900716923 /* Build configuration list for PBXNativeTarget "PersistenceDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E24783F01CC4CE6900716923 /* Debug */,
 				E24783F11CC4CE6900716923 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

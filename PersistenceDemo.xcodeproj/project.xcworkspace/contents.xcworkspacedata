@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:PersistanceDemo.xcodeproj">
+      location = "self:/Users/dtt22/code/coderschool/swift/week7/PersistenceDemo/PersistenceDemo.xcodeproj">
    </FileRef>
 </Workspace>
